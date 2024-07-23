@@ -41,7 +41,7 @@ public class HomePageTest {
 
     @AfterClass
     public void tearDown() {
-        // Close the browser
+        // Close the browser 
         if (driver != null) {
             driver.quit();
         }
