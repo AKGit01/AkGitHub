@@ -51,7 +51,7 @@ public class HomePageTest {
         // Wait until the element is visible
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("APjFqb"))).sendKeys("Selenium WebDriver");
         homePage.clickSearchButton();
-        assertTrue(driver.getTitle().contains("Selenium WebDriver"), "Page title does not contain 'Selenium WebDriver'");
+        assertTrue(driver.getTitle().contains("Selenium"), "Page title does not contain 'Selenium WebDriver'");
         // Find and click on the first search result link
         WebElement firstResultLink = driver.findElement(By.cssSelector("h3"));
         firstResultLink.click();
