@@ -39,6 +39,8 @@ public class WaitFunction {
                 .withTimeout(Duration.ofSeconds(30))
                 .pollingEvery(Duration.ofSeconds(5))
                 .ignoring(Exception.class);
+    	 wait.until((ExpectedCondition<Boolean>) wd ->
+         ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete"));
     }
 }
 
