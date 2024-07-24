@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import Library.CommonFunction;
+import Library.WaitFunction;
 import pages.HomePage;
 
 import static org.testng.Assert.assertTrue;
@@ -19,7 +19,7 @@ import java.time.Duration;
 public class HomePageTest {
     WebDriver driver;
     HomePage homePage;
-    CommonFunction waitpage;
+    WaitFunction waitpage;
 
     @BeforeClass
     public void setUp() {
@@ -34,33 +34,30 @@ public class HomePageTest {
 
         // Initialize the HomePage object
         homePage = new HomePage(driver);
-        
-        // Initialize the Commonfunction object
-        //waitpage = new CommonFunction(driver);
     }
 
     @Test
     public void testSearch() {
-        // Enter search text and click the search button
-       // homePage.enterSearchText("Selenium WebDriver");
-        //homePage.clickSearchButton();
-        // Verify that the page title contains "Selenium WebDriver"
-       // String pageTitle = homePage.getPageTitle();
+
      // Create an instance of WebDriverWait
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));      
         // Wait until the element is visible
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("APjFqb"))).sendKeys("Selenium WebDriver");
         homePage.clickSearchButton();
-        CommonFunction.waitForPageLoad(driver);
+        WaitFunction.waitForPageLoad(driver);
         assertTrue(driver.getTitle().contains("Selenium"), "Page title does not contain 'Selenium WebDriver'");
         // Find and click on the first search result link
         WebElement firstResultLink = driver.findElement(By.cssSelector("h3"));
         firstResultLink.click();
 
         // Wait for the next page to load completely
-        CommonFunction.waitForPageLoad(driver);
-        
+        WaitFunction.waitForPageLoad(driver);      
         assertTrue(driver.getTitle().contains("WebDriver"), "Page title does not contain 'WebDriver'");
+        
+        WebElement firstLink = driver.findElement(By.xpath("//a[@href='/documentation/webdriver/getting_started/']"));
+        firstLink.click();
+        WaitFunction.waitUsingFluent(driver); 
+        assertTrue(driver.getTitle().contains("Getting"), "Page title does not contain Getting");
         
     }
 
