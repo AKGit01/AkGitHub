@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
 import Library.WaitFunction;
 import pages.HomePage;
 
@@ -24,7 +26,7 @@ public class HomePageTest {
     @BeforeClass
     public void setUp() {
         // Set the path to chromedriver.exe
-       System.setProperty("webdriver.chrome.driver", "C:/Selenium/Selenium_Jars/chromedriver.exe");
+       //System.setProperty("webdriver.chrome.driver", "C:/Selenium/Selenium_Jars/chromedriver.exe");
         
         // Initialize the Chrome driver
         driver = new ChromeDriver();
@@ -42,6 +44,8 @@ public class HomePageTest {
      // Create an instance of WebDriverWait
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));      
         // Wait until the element is visible
+        SoftAssert softassert = new SoftAssert();
+        
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("APjFqb"))).sendKeys("Selenium WebDriver");
         homePage.clickSearchButton();
         WaitFunction.waitForPageLoad(driver);
@@ -58,6 +62,7 @@ public class HomePageTest {
         firstLink.click();
         WaitFunction.waitUsingFluent(driver); 
         assertTrue(driver.getTitle().contains("Getting"), "Page title does not contain Getting");
+        softassert.equals(driver.getTitle().contains("Getting"));
         
     }
 

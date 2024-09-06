@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestCase.HomePageTest">
+      <class name="xpath.XpathDemo">
         <methods>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-          <include name="testSearch"/>
+          <include name="xpathFind"/>
         </methods>
-      </class> <!-- TestCase.HomePageTest -->
+      </class> <!-- xpath.XpathDemo -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
