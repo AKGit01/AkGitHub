@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="xpath.XpathDemo">
+      <class name="selenium.FlipkartTestCase">
         <methods>
-          <include name="xpathFind"/>
+          <include name="closedriver"/>
+          <include name="openweb"/>
         </methods>
-      </class> <!-- xpath.XpathDemo -->
+      </class> <!-- selenium.FlipkartTestCase -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

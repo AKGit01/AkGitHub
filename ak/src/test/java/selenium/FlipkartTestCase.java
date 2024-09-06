@@ -1,5 +1,6 @@
 package selenium;
 
+import java.time.Duration;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -9,6 +10,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
@@ -21,6 +23,7 @@ public class FlipkartTestCase {
 	public void openweb() {
 		driver = new ChromeDriver();
 		driver.get(Url);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
 		WebElement E1=driver.findElement(By.xpath("//input[contains(@title,'Search')]"));
 		E1.sendKeys("Mobile");
@@ -28,6 +31,7 @@ public class FlipkartTestCase {
 
 		List<WebElement>L1=driver.findElements(By.xpath("//div[@class='DOjaWF gdgoEp']//div[@class='yKfJKb row']//div[@class='KzDlHZ']"));
 		String parentWindowId = driver.getWindowHandle();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		for(WebElement w : L1) {
 			String text = w.getText();
 			System.out.println(text);
@@ -50,7 +54,7 @@ public class FlipkartTestCase {
 			if(!eachBrowserWindow.equals(parentWindowId))			
 			{
 				driver.switchTo().window(eachBrowserWindow);
-				driver.findElement(By.xpath("//a[@class = '_9Wy27C']/span[text()='Cart']")).click();	
+				driver.findElement(By.xpath("//a[contains(@href , 'cart')]//span")).click();	
 			}	
 
 		}
