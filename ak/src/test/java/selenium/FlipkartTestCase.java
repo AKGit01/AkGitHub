@@ -7,9 +7,11 @@ import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchWindowException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
@@ -25,20 +27,27 @@ public class FlipkartTestCase {
 		driver.get(Url);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
-		WebElement E1=driver.findElement(By.xpath("//input[contains(@title,'Search')]"));
+		WebElement E1 = driver.findElement(By.xpath("//input[contains(@title,'Search')]"));
 		E1.sendKeys("Mobile");
 		E1.sendKeys(Keys.ENTER);
 
-		List<WebElement>L1=driver.findElements(By.xpath("//div[@class='DOjaWF gdgoEp']//div[@class='yKfJKb row']//div[@class='KzDlHZ']"));
+		List<WebElement> L1 = driver.findElements(
+				By.xpath("//div[contains(@class,'col')]//div[@class='KzDlHZ']"));
 		String parentWindowId = driver.getWindowHandle();
-		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		for(WebElement w : L1) {
+		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		for (WebElement w : L1) {
 			String text = w.getText();
 			System.out.println(text);
-			if(text.contains("vivo")) {
+			if (text.contains("vivo")) {
 				System.out.println("Match found in for loop: vivo");
-				w.click();
-				break;
+				try {
+                    // Wait until the element is clickable before clicking
+                    wait.until(ExpectedConditions.elementToBeClickable(w));
+                    w.click();
+                } catch (Exception e) {
+                    System.out.println("Element not clickable or timed out: " + e.getMessage());
+                }
+                break;
 			}
 		}
 		Iterator<WebElement> I = L1.iterator();
@@ -55,16 +64,27 @@ public class FlipkartTestCase {
 		}
 
 		Set<String> windowsList = driver.getWindowHandles();
-		for(String eachBrowserWindow: windowsList) {
-			if(!eachBrowserWindow.equals(parentWindowId))			
-			{
-				driver.switchTo().window(eachBrowserWindow);
-				Thread.sleep(2000);
-				driver.findElement(By.xpath("//a[contains(@href ,'cart')]//span")).click();	
-			}	
-
+		// Iterate through each window handle
+		for (String eachBrowserWindow : windowsList) {
+			// Check if the current window is not the parent window
+			if (!eachBrowserWindow.equals(parentWindowId)) {
+				try {
+					// Try switching to the new window
+					driver.switchTo().window(eachBrowserWindow);
+					Thread.sleep(2000); // Pause for 2 seconds to ensure the window is loaded
+					// Perform action inside the new window (e.g., clicking the cart button)
+					driver.findElement(By.xpath("//a[contains(@href, 'cart')]//span")).click();
+				} catch (NoSuchWindowException e) {
+					// Handle the exception when the window is not found
+					System.out.println("The window could not be found or is no longer available: " + e.getMessage());
+				} catch (InterruptedException e) {
+					// Handle interrupted exceptions for the Thread.sleep
+					System.out.println("Thread sleep was interrupted: " + e.getMessage());
+				}
+			}
 		}
 	}
+
 	@AfterClass
 	public void closedriver() {
 		driver.close();
