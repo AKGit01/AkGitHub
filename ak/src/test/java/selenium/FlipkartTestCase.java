@@ -20,7 +20,7 @@ public class FlipkartTestCase {
 	WebDriver driver;
 
 	@Test
-	public void openweb() {
+	public void openweb() throws InterruptedException {
 		driver = new ChromeDriver();
 		driver.get(Url);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -31,10 +31,15 @@ public class FlipkartTestCase {
 
 		List<WebElement>L1=driver.findElements(By.xpath("//div[@class='DOjaWF gdgoEp']//div[@class='yKfJKb row']//div[@class='KzDlHZ']"));
 		String parentWindowId = driver.getWindowHandle();
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		for(WebElement w : L1) {
 			String text = w.getText();
 			System.out.println(text);
+			if(text.contains("vivo")) {
+				System.out.println("Match found in for loop: vivo");
+				w.click();
+				break;
+			}
 		}
 		Iterator<WebElement> I = L1.iterator();
 		while (I.hasNext()) {
@@ -43,7 +48,7 @@ public class FlipkartTestCase {
 
 			// Check if the product text contains "vivo"
 			if (element.getText().contains("vivo")) {
-				System.out.println("Match found: vivo");
+				System.out.println("Match found in while : vivo");
 				element.click();
 				break;
 			}
@@ -54,7 +59,8 @@ public class FlipkartTestCase {
 			if(!eachBrowserWindow.equals(parentWindowId))			
 			{
 				driver.switchTo().window(eachBrowserWindow);
-				driver.findElement(By.xpath("//a[contains(@href , 'cart')]//span")).click();	
+				Thread.sleep(2000);
+				driver.findElement(By.xpath("//a[contains(@href ,'cart')]//span")).click();	
 			}	
 
 		}
