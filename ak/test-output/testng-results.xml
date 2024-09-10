@@ -2,20 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-09-07T00:58:04 IST" name="Default suite" finished-at="2024-09-07T00:58:43 IST" duration-ms="39722">
+  <suite started-at="2024-09-09T18:29:26 IST" name="Default suite" finished-at="2024-09-09T18:29:30 IST" duration-ms="3932">
     <groups>
     </groups>
-    <test started-at="2024-09-07T00:58:04 IST" name="Default test" finished-at="2024-09-07T00:58:43 IST" duration-ms="39722">
-      <class name="selenium.FlipkartTestCase">
-        <test-method signature="openweb()[pri:0, instance:selenium.FlipkartTestCase@2794eab6]" started-at="2024-09-07T00:58:04 IST" name="openweb" finished-at="2024-09-07T00:58:43 IST" duration-ms="39114" status="PASS">
+    <test started-at="2024-09-09T18:29:26 IST" name="Default test" finished-at="2024-09-09T18:29:30 IST" duration-ms="3932">
+      <class name="Rest.First">
+        <test-method signature="validate()[pri:0, instance:Rest.First@4a883b15]" started-at="2024-09-09T18:29:26 IST" name="validate" finished-at="2024-09-09T18:29:30 IST" duration-ms="3873" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- openweb -->
-        <test-method is-config="true" signature="closedriver()[pri:0, instance:selenium.FlipkartTestCase@2794eab6]" started-at="2024-09-07T00:58:43 IST" name="closedriver" finished-at="2024-09-07T00:58:43 IST" duration-ms="555" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closedriver -->
-      </class> <!-- selenium.FlipkartTestCase -->
+        </test-method> <!-- validate -->
+      </class> <!-- Rest.First -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
