@@ -31,12 +31,16 @@ public class UserDataExample {
         hobbies.add("Music");
         hobbies.add("computers");
         hobbies.add("Games");
+        
+        //Add List to Map
         UserData.put("Hobbies", hobbies);
         
         HashMap<String, String> TechSkill = new HashMap<String, String>();
         TechSkill.put("Programming language", "Java");
         TechSkill.put("WebAutomation", "Selenium");
         TechSkill.put("API testing", "Rest Assured");
+        
+        //Add @nd Map to main Map
         UserData.put("TechSkill", TechSkill);
 
         // Print the map

@@ -5,6 +5,8 @@ public class first {
         int r;
         
         Calc C = new Calc("amit", 2); // Calls the parameterized constructor
+        
+
        // System.out.println("name: " + C.);  // Outputs: Sum: 15
         
         Calc A = new Calc(); // Calls the default constructor

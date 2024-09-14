@@ -9,19 +9,30 @@ public class setEx {
 
 	public static void main(String arg[]) {
 		
-		Set<Integer> s1= new HashSet<>();
-		
-		s1.add(3);
-		
-		List<Integer> L1= new ArrayList<>();
-		
-		L1.add(4);
-		L1.add(4);
-		
-		s1.addAll(L1);
-		//s1.g
-		
-		System.out.println(s1);
+		List<String> list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+        list.add("Orange");
+
+        // Print the list
+        System.out.println("List: " + list);
+
+        // Create a Set and add all elements from the List
+        Set<String> set = new HashSet<>(list);
+
+        // Print the set (duplicate "Apple" will be removed)
+        System.out.println("Set: " + set);
+        // Create an existing Set
+        
+        Set<String> set1 = new HashSet<>();
+        set1.add("Mango");
+        set1.add("Grapes");
+
+        // Add all elements from the List to the existing Set
+        set1.addAll(list);
+
+        // Print the updated set
+        System.out.println("Updated Set: " + set1);
 		
 		
 	}

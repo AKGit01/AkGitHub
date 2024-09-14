@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
@@ -27,9 +28,14 @@ public class FlipkartTestCase {
 		driver.get(Url);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
+		//String S1 = driver.findElement(By.xpath("//input[contains(@title,'Search')]")).getText();
+		WebElement D1 = driver.findElement(By.xpath("//span"));
+		Select select = new Select(D1); 
+		//D1.dr
 		WebElement E1 = driver.findElement(By.xpath("//input[contains(@title,'Search')]"));
-		E1.sendKeys("Mobile");
-		E1.sendKeys(Keys.ENTER);
+		//E1.sendKeys("Mobile");
+		//E1.sendKeys(Keys.ENTER);
+		E1.sendKeys("Mobile"+Keys.ENTER);
 
 		List<WebElement> L1 = driver.findElements(
 				By.xpath("//div[contains(@class,'col')]//div[@class='KzDlHZ']"));

@@ -4,7 +4,10 @@ public class stringex {
 
     public static void main(String arg[]) {
         String s = "New to java world";
-        
+        String w,rs;
+        String rf=" ";
+        char c,l;
+       // int count =0;
         //to search word 
         String t[] = s.split(" ");
         
@@ -13,6 +16,16 @@ public class stringex {
                 System.out.println("found");
             }
         }
+        //swap first and last ch of each word
+        for (String str : t) {
+            	c=str.charAt(0);
+            	l=str.charAt(str.length()-1);
+            	w=str.substring(1, str.length()-1);
+            	rs=l+w+c+" ";
+            	rf=rf+rs;
+            	rs=" ";           
+        }
+        System.out.println("Reverse ch string = " + rf);
         
         //to reverse line
         StringBuilder reversed = new StringBuilder();
@@ -20,7 +33,7 @@ public class stringex {
         	reversed=reversed.append(t[i]);
         	reversed.append(" ");
         }
-        System.out.println(reversed.toString());
+        System.out.println("Resverse line = " +reversed.toString());
         
         //reverse the word
         
