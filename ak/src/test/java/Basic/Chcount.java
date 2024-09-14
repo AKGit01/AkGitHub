@@ -20,15 +20,16 @@ public class Chcount {
 		           hashMap.put(currentChar, 1); // If not present, add the character with a count of 1
 		       }
 		   }
+		   for(Map.Entry<Character, Integer> m1: hashMap.entrySet()) {
+			   System.out.println("Char = " + m1.getKey() + " Count = " + m1.getValue());
+		   }
+		   System.out.println("Count of Char" + hashMap);
 	      
 	      String str="thisisits";
 	      String s="";
 	      for(int i=0;i<str.length();i++) {
 	    	    int count=0; // move count to here so it counts from zero every iteration of outer loop
-	    	    StringBuffer SB=new StringBuffer();
-	    	    SB.append(str.charAt(i));
-	    	    for(int j=i;j<str.length();j++) {
-	    	    	//if(SB.)
+	    	    for(int j=i;j<str.length();j++) {    	    	
 	    	    	if(!s.contains(String.valueOf(str.charAt(j)))) {
 		    	        if(str.charAt(i)==str.charAt(j)) {
 		    	            count++;    

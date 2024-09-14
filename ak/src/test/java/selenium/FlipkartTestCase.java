@@ -1,6 +1,7 @@
 package selenium;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -42,6 +43,7 @@ public class FlipkartTestCase {
 		String parentWindowId = driver.getWindowHandle();
 		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		for (WebElement w : L1) {
+			//for(int k =0; k<L1.size();i++)
 			String text = w.getText();
 			System.out.println(text);
 			if (text.contains("vivo")) {
@@ -89,6 +91,9 @@ public class FlipkartTestCase {
 				}
 			}
 		}
+		
+		List<String> tabs = new ArrayList<>(driver.getWindowHandles());
+		driver.switchTo().window(tabs.get(1));
 	}
 
 	@AfterClass
