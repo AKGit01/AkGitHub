@@ -36,7 +36,7 @@ public class Getmethod {
 		RestAssured.given()
 		.queryParam("id","3")
 		.when().get()
-		.then().statusCode(200);
+		.then().statusCode(200).extract().response();
 	}
 
 }

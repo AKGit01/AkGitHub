@@ -1,7 +1,12 @@
 package Basic;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Chcount {
 	   public static void main(String[] args) {
@@ -24,22 +29,37 @@ public class Chcount {
 			   System.out.println("Char = " + m1.getKey() + " Count = " + m1.getValue());
 		   }
 		   System.out.println("Count of Char" + hashMap);
-	      
-	      String str="thisisits";
-	      String s="";
-	      for(int i=0;i<str.length();i++) {
-	    	    int count=0; // move count to here so it counts from zero every iteration of outer loop
-	    	    for(int j=i;j<str.length();j++) {    	    	
-	    	    	if(!s.contains(String.valueOf(str.charAt(j)))) {
-		    	        if(str.charAt(i)==str.charAt(j)) {
-		    	            count++;    
-		    	        }
-	    	    	}	    	    	
-	    	    }
-	    	    if(count>0)
-	    	    System.out.println("Total number of count of occurance of "+str.charAt(i)+" is "+count);
-	    	    
-	    	     s= s+str.valueOf(str.charAt(i));	    	    	 
-	      }
+		   
+		   //Find largest chr count in word
+			List<Integer> arrList = new ArrayList<> (hashMap.values());
+			System.out.println("Not Sorted: " + arrList);
+			
+			Set<Integer> unique = new TreeSet<>(Collections.reverseOrder());
+			unique.addAll(arrList);
+			
+			List<Integer> sortedVal = new ArrayList<> (unique);
+			
+			for(Character entry : hashMap.keySet()) {
+				if(hashMap.get(entry) == sortedVal.getFirst()) {
+					System.out.println("Larget number is : " + entry + hashMap.get(entry));
+				}
+			}	
+//	      
+//	      String str="thisisits";
+//	      String s="";
+//	      for(int i=0;i<str.length();i++) {
+//	    	    int count=0; // move count to here so it counts from zero every iteration of outer loop
+//	    	    for(int j=i;j<str.length();j++) {    	    	
+//	    	    	if(!s.contains(String.valueOf(str.charAt(j)))) {
+//		    	        if(str.charAt(i)==str.charAt(j)) {
+//		    	            count++;    
+//		    	        }
+//	    	    	}	    	    	
+//	    	    }
+//	    	    if(count>0)
+//	    	    System.out.println("Total number of count of occurance of "+str.charAt(i)+" is "+count);
+//	    	    
+//	    	     s= s+str.valueOf(str.charAt(i));	    	    	 
+//	      }
 	   }
 	}

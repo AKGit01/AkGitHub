@@ -7,8 +7,6 @@ import java.util.Map;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-
-
 public class ListofMap {
 	 public static void main(String[] args) {
 	        try {
