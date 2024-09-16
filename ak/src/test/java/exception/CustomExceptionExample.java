@@ -1,4 +1,4 @@
-package Basic;
+package exception;
 
 //Custom checked exception
 class CustomCheckedException extends Exception {
