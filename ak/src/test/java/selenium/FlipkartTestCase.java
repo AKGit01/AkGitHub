@@ -72,6 +72,8 @@ public class FlipkartTestCase {
 		}
 
 		Set<String> windowsList = driver.getWindowHandles();
+		//List<String> tabs = new ArrayList<>(driver.getWindowHandles());
+
 		// Iterate through each window handle
 		for (String eachBrowserWindow : windowsList) {
 			// Check if the current window is not the parent window
