@@ -2,20 +2,24 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-09-16T16:40:13 IST" name="Default suite" finished-at="2024-09-16T16:40:17 IST" duration-ms="4673">
+  <suite started-at="2024-09-18T18:49:23 IST" name="Default suite" finished-at="2024-09-18T18:49:32 IST" duration-ms="9470">
     <groups>
     </groups>
-    <test started-at="2024-09-16T16:40:13 IST" name="Default test" finished-at="2024-09-16T16:40:17 IST" duration-ms="4673">
-      <class name="Rest.Getmethod">
-        <test-method signature="Bdd()[pri:0, instance:Rest.Getmethod@4686afc2]" started-at="2024-09-16T16:40:13 IST" name="Bdd" finished-at="2024-09-16T16:40:16 IST" duration-ms="3542" status="PASS">
+    <test started-at="2024-09-18T18:49:23 IST" name="Default test" finished-at="2024-09-18T18:49:32 IST" duration-ms="9470">
+      <class name="selenium.Brokenlink">
+        <test-method signature="open()[pri:0, instance:selenium.Brokenlink@1a942c18]" started-at="2024-09-18T18:49:23 IST" name="open" finished-at="2024-09-18T18:49:31 IST" duration-ms="7794" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Bdd -->
-        <test-method signature="getmethod()[pri:0, instance:Rest.Getmethod@4686afc2]" started-at="2024-09-16T16:40:16 IST" name="getmethod" finished-at="2024-09-16T16:40:17 IST" duration-ms="1048" status="PASS">
+        </test-method> <!-- open -->
+        <test-method signature="getlink()[pri:0, instance:selenium.Brokenlink@1a942c18]" started-at="2024-09-18T18:49:31 IST" name="getlink" finished-at="2024-09-18T18:49:32 IST" depends-on-methods="selenium.Brokenlink.open" duration-ms="1214" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getmethod -->
-      </class> <!-- Rest.Getmethod -->
+        </test-method> <!-- getlink -->
+        <test-method is-config="true" signature="closedriver()[pri:0, instance:selenium.Brokenlink@1a942c18]" started-at="2024-09-18T18:49:32 IST" name="closedriver" finished-at="2024-09-18T18:49:32 IST" duration-ms="395" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closedriver -->
+      </class> <!-- selenium.Brokenlink -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -38,8 +38,7 @@ public class FlipkartTestCase {
 		//E1.sendKeys(Keys.ENTER);
 		E1.sendKeys("Mobile"+Keys.ENTER);
 
-		List<WebElement> L1 = driver.findElements(
-				By.xpath("//div[contains(@class,'col')]//div[@class='KzDlHZ']"));
+		List<WebElement> L1 = driver.findElements(By.xpath("//div[@class='KzDlHZ"));
 		String parentWindowId = driver.getWindowHandle();
 		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		for (WebElement w : L1) {
