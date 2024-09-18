@@ -50,10 +50,13 @@ public class MapWithObject {
 		MapWithObject obj3 = new MapWithObject("",1);
 		obj3.setValues("amit", 10);
 		m1.put(3, obj3);
+		
+		m1.put(4, new MapWithObject("amit",767));
 
 		// Iterate through the map and print the key-value pairs
 		for (Map.Entry<Integer, MapWithObject> entry : m1.entrySet()) {
 			System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+			//System.out.println("key value -->"+ entry.g);
 		}
 	}
 }

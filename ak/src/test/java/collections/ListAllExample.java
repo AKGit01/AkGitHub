@@ -3,6 +3,8 @@ package collections;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class ListAllExample {
 	
@@ -37,9 +39,13 @@ public class ListAllExample {
 	//Adding value to List1
 		L1.add(20);
 		L1.add(1,30);
+		L1.add(4);
 		System.out.println("Size of List1 =" + L1.size());
 		System.out.println("Element of List1 =" + L1);
 		
+		Set<Integer> T1= new TreeSet<>();
+		T1.addAll(L1);
+		System.out.println("Element in TreeSet1 =" + T1);
 	//Adding value to List3
 		L3.add("Amit");
 		L3.add(11);
@@ -52,8 +58,8 @@ public class ListAllExample {
 	//Adding value to S1
 		s1.add(new ListAllExample (4,"ak"));
 		s1.add(new ListAllExample (8,"pk"));
+		System.out.println("Value of List at s1 =" + s1.get(1));
 		System.out.println("List s1 =" + s1);
-		
 		L3.addAll(s1);
 		System.out.println("All combined" + L3);
 		

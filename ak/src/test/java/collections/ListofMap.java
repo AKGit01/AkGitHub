@@ -35,6 +35,7 @@ public class ListofMap {
 	            listOfMaps.add(map1);
 	            listOfMaps.add(map2);
 	            listOfMaps.add(map3);
+	            //listOfMaps.addAll(map3);//not add as Map is not a collection 
 
 	            // Convert List of Maps to JSON string
 	            String jsonOutput = mapper.writeValueAsString(listOfMaps);

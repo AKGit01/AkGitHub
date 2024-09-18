@@ -16,13 +16,14 @@ public class Chcount {
 		   Map<Character, Integer> hashMap = new HashMap<>(); // Create a HashMap to store character counts
 
 		   // Loop through the string in reverse
-		   for (int i = myStr.length() - 1; i >= 0; i--) {
-		       char currentChar = myStr.charAt(i); // Get the current character
-		       if (hashMap.containsKey(currentChar)) { // Check if the character is already in the map
-		           int count = hashMap.get(currentChar); // Retrieve the current count
-		           hashMap.put(currentChar, ++count); // Increment the count and update the map
+		   //for (int i = myStr.length() - 1; i >= 0; i--) {
+		    //   char currentChar = myStr.charAt(i); // Get the current character
+		   for(char c: myStr.toCharArray()) {
+		       if (hashMap.containsKey(c)) { // Check if the character is already in the map
+		           int count = hashMap.get(c); // Retrieve the current count
+		           hashMap.put(c, ++count); // Increment the count and update the map
 		       } else {
-		           hashMap.put(currentChar, 1); // If not present, add the character with a count of 1
+		           hashMap.put(c, 1); // If not present, add the character with a count of 1
 		       }
 		   }
 		   for(Map.Entry<Character, Integer> m1: hashMap.entrySet()) {
