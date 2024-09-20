@@ -32,7 +32,7 @@ public class AllSetExample {
 		//s1.add(1,3);
 		System.out.println("Size of Set1 =" + s1.size());
 		
-		//add element to linkedhash set
+		//add element to linkedhash set 
 		Set <Integer> L1 = new LinkedHashSet<>();
 		L1.add(30);
 		L1.addAll(s1);

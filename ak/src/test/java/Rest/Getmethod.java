@@ -30,13 +30,20 @@ public class Getmethod {
 	
 	//given when then
 
-    @Test
+    @Test(dependsOnMethods="getmethod")
 	public void Bdd() {
+    	//sets the base URL for all requests.
 		RestAssured.baseURI ="https://api.restful-api.dev/objects";
+		
 		RestAssured.given()
 		.queryParam("id","3")
 		.when().get()
 		.then().statusCode(200).extract().response();
+		
+		String s=RestAssured.given()
+		.queryParam("id","3")
+		.when().get().then().extract().response().asString();
+		System.out.println("output of BDD" +s);
 	}
 
 }

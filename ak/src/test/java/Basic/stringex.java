@@ -42,7 +42,7 @@ public class stringex {
         char ch;
         for(int i=0;i<p.length();i++) {
         	ch=p.charAt(i);
-        	k=ch+k;
+        	k=ch+k+i;
         }
         System.out.println(k);
         

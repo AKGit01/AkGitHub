@@ -19,7 +19,7 @@ public class ZTest {
 							
 							
 		 Response response = RestAssured
-		            .given()
+		            .given() // Prepares the request with base URI, base path, and query parameters.
 		            .baseUri("https://reqres.in")
 		            .basePath("/api/users")
 		            .queryParam("page", 2)
@@ -32,7 +32,7 @@ public class ZTest {
 		            .body("data[0].id", equalTo(7))
 		            .extract()
 		            .response();
-		
+		//extract the response using .response(), and then parse it using JsonPath to easily retrieve data.
 		 System.out.println(response.asPrettyString());
 		 JsonPath jsonPath = response.jsonPath() ;
 		
