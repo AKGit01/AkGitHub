@@ -20,6 +20,13 @@ public class openurl {
    // public openurl(Hooks hooks) {
    //     this.driver = hooks.getDriver();
    // }
+    
+    @Given("the user is on the login page")
+    public void the_user_is_on_the_login_page() {
+        System.out.println("User is on the login page");
+        // Code to navigate to the login page, e.g., driver.get("http://example.com/login");
+    }
+    
   //@DataTableType
     @Given("Open the url")
     public void open_the_url() {

@@ -19,6 +19,10 @@
 
 Feature: Amazon mobile search
 
+//Runs before each scenario in a feature file
+Background:
+  Given the user is on the login page
+
  @smoketest
   Scenario Outline: Add mobile to cart
     Given Open the url

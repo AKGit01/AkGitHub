@@ -10,7 +10,8 @@ public class Hooks {
 
     private WebDriver driver;
     private final String url = "https://www.amazon.in/ref=nav_logo";
-
+    
+//Hooks apply to all feature files and scenarios unless scoped specifically.
     @Before
     public void setup() {
         // Setup ChromeDriver using WebDriverManager

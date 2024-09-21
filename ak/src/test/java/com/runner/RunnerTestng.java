@@ -2,7 +2,8 @@ package com.runner;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
-
+//For TestNG, configure your testng.xml file to run multiple test classes in parallel, 
+//or use the Cucumber-Parallel plugin.
 @CucumberOptions(
   features = {"src/test/resources/features"},
   glue = {"com.BDD.stepdef", "hooks"},
