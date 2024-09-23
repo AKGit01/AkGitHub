@@ -3,13 +3,12 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="TestCase.HomePageTest">
+      <class name="selenium.FlipkartTestCaseTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-          <include name="testSearch"/>
+          <include name="openwebTest"/>
+          <include name="closedriverTest"/>
         </methods>
-      </class> <!-- TestCase.HomePageTest -->
+      </class> <!-- selenium.FlipkartTestCaseTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
