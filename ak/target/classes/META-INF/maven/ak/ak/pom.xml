@@ -125,6 +125,14 @@
         <artifactId>cucumber-testng</artifactId>
         <version>7.11.0</version>
     </dependency>
+    
+	<!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all -->
+	<dependency>
+	    <groupId>org.codehaus.groovy</groupId>
+	    <artifactId>groovy-all</artifactId>
+	    <version>3.0.22</version>
+	    <type>pom</type>
+	</dependency>
 
 </dependencies>
 

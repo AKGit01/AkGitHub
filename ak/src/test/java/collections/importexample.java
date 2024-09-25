@@ -1,5 +1,5 @@
 package collections;
-import  Basic.Calc;
+import basic.Calc;
 
 public class importexample {
 

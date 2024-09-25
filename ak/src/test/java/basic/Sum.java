@@ -1,6 +1,6 @@
 // Java program to demonstrate working of method 
 // overloading in Java 
-package Basic;
+package basic;
 
 public class Sum { 
 	// Overloaded sum(). This sum takes two int parameters 

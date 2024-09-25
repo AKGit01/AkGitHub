@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import io.restassured.path.json.JsonPath;
+//import static io.restassured.RestAssured.*;
 
 //import com.jayway.jsonpath.JsonPath;
 
@@ -27,7 +28,7 @@ public class ReadJsonpath {
 
 	// Get the list of books
     List<Map<String, Object>> books = js.getList("store.book");
-
+   // List<Map<String, Object>> books1 = js.get("store.book").findAll{ it.price > 10 };
     // Filter and print books with price > 10
     System.out.println("Books with price greater than 10:");
     for (Map<String, Object> book : books) {

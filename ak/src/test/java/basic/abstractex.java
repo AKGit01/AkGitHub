@@ -1,4 +1,4 @@
-package Basic;
+package basic;
 
 public abstract class abstractex {
 	public abstract int add (int a,int b);

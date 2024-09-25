@@ -1,4 +1,4 @@
-package Basic;
+package basic;
 class Laptop {
     String model;
     int price;

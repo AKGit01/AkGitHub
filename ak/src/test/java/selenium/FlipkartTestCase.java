@@ -16,23 +16,23 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+//@Listeners(selenium.ListnerEx.class)
 public class FlipkartTestCase {
 
 	String Url = "https://www.flipkart.com/";
 	WebDriver driver;
 
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void openweb() throws InterruptedException {
 		driver = new ChromeDriver();
 		driver.get(Url);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
 		//String S1 = driver.findElement(By.xpath("//input[contains(@title,'Search')]")).getText();
-		WebElement D1 = driver.findElement(By.xpath("//span"));
-		Select select = new Select(D1); 
-		//D1.dr
+		//WebElement D1 = driver.findElement(By.xpath("//span"));
 		WebElement E1 = driver.findElement(By.xpath("//input[contains(@title,'Search')]"));
 		//E1.sendKeys("Mobile");
 		//E1.sendKeys(Keys.ENTER);

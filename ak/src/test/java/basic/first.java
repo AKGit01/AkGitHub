@@ -1,4 +1,4 @@
-package Basic;
+package basic;
 
 public class first {
     public static void main(String a[]) {

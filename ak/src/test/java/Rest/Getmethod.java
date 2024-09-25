@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
+//import static io.restassured.RestAssured.*;
 import io.restassured.response.Response;
 
 public class Getmethod {
@@ -34,7 +35,7 @@ public class Getmethod {
 	public void Bdd() {
     	//sets the base URL for all requests.
 		RestAssured.baseURI ="https://api.restful-api.dev/objects";
-		
+		//given();
 		RestAssured.given()
 		.queryParam("id","3")
 		.when().get()

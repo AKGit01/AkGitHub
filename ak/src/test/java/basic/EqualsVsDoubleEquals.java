@@ -1,4 +1,4 @@
-package Basic;
+package basic;
 
 public class EqualsVsDoubleEquals {
     public static void main(String[] args) {
